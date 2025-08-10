@@ -1,0 +1,20 @@
+#nodeSelector is used to create a pod in a specific node. As we have give distype=ssd so it will fo the node
+# where it has a lable disktype=ssd
+
+# ImagePullPolicy - 3 types Always, IfNotPresent
+#IfNotPresent - If any changes done in image or any new updates then node will not pull the image as we said inotpresent
+#Always - It will always pull it wether changes been made or not
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-selector-demo
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: Always
+  nodeSelector:
+    disktype: ssd
