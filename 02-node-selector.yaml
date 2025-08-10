@@ -1,0 +1,15 @@
+#Tainted nodes would be tolerated as below
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-selector-demo-1
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: Always
+  nodeSelector:
+    disktype: ssd
+  
