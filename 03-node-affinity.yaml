@@ -16,7 +16,7 @@ spec:
       #       #- gpu
       #       - gpuuu
       preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
+      - weight: 1 #orderly mananer
         preference:
           matchExpressions:
           - key: another-node-label-key
